@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main() {
+  int num;
+  float square, cube;
+
+  printf("Enter a decimal number: ");
+  scanf("%d", &num);
+
+  square = num * num;
+  cube = num * num * num;
+
+  printf("The square of %d is %f\n", num, square);
+  printf("The cube of %d is %f\n", num, cube);
+
+  return 0;
+}
