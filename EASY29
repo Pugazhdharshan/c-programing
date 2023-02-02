@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include <string.h>
+
+struct Book {
+char title[50];
+char author[50];
+char subject[100];
+int bookid;
+};
+
+void displayBookInfo(struct Book *book) {
+printf("Title: %s\n", book->title);
+printf("Author: %s\n", book->author);
+printf("Subject: %s\n", book->subject);
+printf("Book ID: %d\n", book->bookid);
+}
+
+int main() {
+int n, i;
+struct Book book;
+printf("Enter the number of books: ");
+scanf("%d", &n);
+
+for (i = 0; i < n; i++) {
+printf("Enter the book %d title : ", i + 1);
+scanf("%s", book.title);
+printf("Enter the book %d Author: ", i + 1);
+scanf("%s", book.author);
+printf("Enter the Book %d subject : ", i + 1);
+scanf("%s", book.subject);
+book.bookid = i + 1;
+
+printf("\n");
+printf("Book %d Info:\n", i + 1);
+displayBookInfo(&book);
+printf("\n");
+}
+
+return 0;
+}
