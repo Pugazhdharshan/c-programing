@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <stdlib.h>
+struct subject {
+    char name[20];
+    int marks;
+}
+int main() {
+    int n, i;
+    struct subject *ptr;
+printf("Enter the number of subjects: ");
+    scanf("%d", &n);
+ptr = (struct subject*)malloc(n * sizeof(struct subject));
+    if (ptr == NULL) {
+        printf("Memory allocation failed.\n");
+        return 1;
+    }
+for (i = 0; i < n; i++) {
+        printf("Enter name and marks for subject %d: ", i + 1);
+        scanf("%s%d", (ptr + i)name, &(ptr + i)marks);
+    }
+ printf("Subject and mark information: \n");
+    for (i = 0; i < n; i++) {
+        printf("Subject %d: %s, Marks: %d\n", i + 1, (ptr + i)name, (ptr + i)marks);
+    }
+free(ptr);
+    return 0;
+}
