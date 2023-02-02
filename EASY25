@@ -1,0 +1,56 @@
+#include <stdio.h>
+#include <math.h>
+
+double pow_num(double x, int n) {
+  return pow(x, n);
+}
+
+double add_num(double x, int n) {
+  return x + n;
+}
+
+double sub_num(double x, int n) {
+  return x - n;
+}
+
+double mul_num(double x, int n) {
+  return x * n;
+}
+
+double div_num(double x, int n) {
+  return x / n;
+}
+
+int main() {
+  double x;
+  int n, choice;
+
+  printf("Enter value of x: ");
+  scanf("%lf", &x);
+  printf("Enter value of n: ");
+  scanf("%d", &n);
+  printf("Enter choice (1-Pow, 2-Add, 3-Sub, 4-Mul, 5-Div): ");
+  scanf("%d", &choice);
+
+  switch (choice) {
+    case 1:
+      printf("Pow(%0.2lf, %d) = %0.2lf\n", x, n, pow_num(x, n));
+      break;
+    case 2:
+      printf("Add(%0.2lf, %d) = %0.2lf\n", x, n, add_num(x, n));
+      break;
+    case 3:
+      printf("Sub(%0.2lf, %d) = %0.2lf\n", x, n, sub_num(x, n));
+      break;
+    case 4:
+      printf("Mul(%0.2lf, %d) = %0.2lf\n", x, n, mul_num(x, n));
+      break;
+    case 5:
+      printf("Div(%0.2lf, %d) = %0.2lf\n", x, n, div_num(x, n));
+      break;
+    default:
+      printf("Invalid choice.\n");
+  }
+
+  return 0;
+}
