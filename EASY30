@@ -1,0 +1,44 @@
+#include <stdio.h>
+#include <string.h>
+
+struct Marks {
+int rollNo;
+char name[20];
+int marks1;
+int marks2;
+int marks3;
+float total;
+float percentage;
+};
+
+void calculateTotalAndPercentage(struct Marks *student) {
+student->total = student->marks1 + student->marks2 + student->marks3;
+student->percentage = student->total / 3;
+}
+
+int main() {
+struct Marks student;
+
+printf("Enter Roll No.: ");
+scanf("%d", &student.rollNo);
+
+printf("Enter Name: ");
+scanf("%s", student.name);
+
+printf("Enter marks for three subjects: ");
+scanf("%d %d %d", &student.marks1, &student.marks2, &student.marks3);
+
+calculateTotalAndPercentage(&student);
+
+printf("\n");
+printf("Student Info:\n");
+printf("Roll No.: %d\n", student.rollNo);
+printf("Name: %s\n", student.name);
+printf("Total Marks: %.2f\n", student.total);
+printf("Percentage: %.2f\n", student.percentage);
+
+return 0;
+}
+
+
+
