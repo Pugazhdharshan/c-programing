@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+struct Complex {
+int real;
+int imag;
+};
+
+struct Complex addComplex(struct Complex c1, struct Complex c2) {
+struct Complex c3;
+c3.real = c1.real + c2.real;
+c3.imag = c1.imag + c2.imag;
+return c3;
+}
+
+int main() {
+struct Complex c1, c2, c3;
+printf("Enter First complex number:\n");
+printf("Enter real part of complex number: ");
+scanf("%d", &c1.real);
+printf("Enter Imaginary part of complex number: ");
+scanf("%d", &c1.imag);
+
+printf("\nEnter Second complex number:\n");
+printf("Enter real part of complex number: ");
+scanf("%d", &c2.real);
+printf("Enter Imaginary part of complex number: ");
+scanf("%d", &c2.imag);
+
+c3 = addComplex(c1, c2);
+printf("\nSum of two complex numbers is %d + %di", c3.real, c3.imag);
+
+return 0;
+}
