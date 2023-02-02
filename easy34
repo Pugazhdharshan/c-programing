@@ -1,0 +1,31 @@
+#include <stdio.h>
+#define MAX_STUDENTS 50
+
+typedef union {
+    int marks;
+    char name[20];
+} Data;
+
+typedef struct {
+    int roll_no;
+    Data data;
+} Student;
+
+int main() {
+    int n, i;
+    printf("Enter the number of students: ");
+    scanf("%d", &n);
+    Student students[MAX_STUDENTS];
+
+    for (i = 0; i < n; i++) {
+        printf("Enter student %d roll number, name, marks: ", i + 1);
+        scanf("%d %s %d", &students[i].roll_no, students[i].data.name, &students[i].data.marks);
+    }
+
+    printf("\nRoll No\tName\tMarks\n");
+    for (i = 0; i < n; i++) {
+        printf("%d\t%s\t%d\n", students[i].roll_no, students[i].data.name, students[i].data.marks);
+    }
+
+    return 0;
+}
